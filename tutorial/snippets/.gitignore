@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+
+# Django
+*.sqlite3
+*.log
+
+# Virtual env
+venv/
+
+# VSCode
+.vscode/
+
+# Secret keys
+.env
+
+# Static/media if not managed by git
+/static/
+/media/
