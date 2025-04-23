@@ -1,8 +1,8 @@
 from snippets.models import Snippet
-from snippets.serializers import SnippetSerializer
+from snippets.serializers import SnippetSerializer, UserSerializer
 from rest_framework import mixins
 from rest_framework import generics
-
+from django.contrib.auth.models import User
 
 #tut-3 mixins
 class SnippetLlist(generics.ListCreateAPIView):
@@ -14,6 +14,14 @@ class SnippetDetail(generics.RetrieveUpdateDestroyAPIView):
 #Retrieve, update or delete a code snippet
     queryset = Snippet.objects.all()
     serializer_class = SnippetSerializer
+
+class UserList(generics.ListAPIView):
+    queryset = User.object.all()
+    serializer_class = UserSerializer
+
+class UserDetail(generics.RetrieveAPIView):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 # #TUT-3
 # class SnippetLlist(APIView):
